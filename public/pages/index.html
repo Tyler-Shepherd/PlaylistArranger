@@ -1,0 +1,33 @@
+<html ng-app="myApp" class="ng-cloak">
+
+<body>
+
+<div ng-controller="MyController">
+	Artist:
+	<input type="text" id="artist" ng-model="artistInput">
+	Title:
+	<input type="text" id="songTitle" ng-model="songInput">
+	<input type="button" value="Submit" id="submit" ng-click="inputSong()">
+
+	<br>
+	<br>
+
+	<div ng-repeat="song in mySongs">
+		{{song.artistOutput}} - {{song.songOutput}}
+	</div>
+
+	<br>
+
+	<input type="button" value="Arrange" ng-click="arrange()" ng-if="mySongs.length>0">
+</div>
+
+</body>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
+<script src="../scripts/jquery-1.12.0.js"></script>
+<script src="../scripts/app.js"></script>
+<script src="../scripts/getSongData.js"></script>
+
+</html>
